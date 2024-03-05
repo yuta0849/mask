@@ -15,7 +15,7 @@ def mask_except_keywords(s, keywords, mask_char='*'):
     return result
 
 # データを読み込む
-df = pd.read_csv('GAMSampleData_1.csv')
+df = pd.read_csv('GAMSampleData_2.csv')
 
 # マスキングしたいカラムを選択
 column = 'ad_unit'
@@ -25,4 +25,4 @@ keywords = ["overlay", "interstitial"]
 df[column] = df[column].apply(lambda x: mask_except_keywords(str(x), keywords))
 
 # ファイルに書き出す
-df.to_csv('GAMSampleData_1_masked.csv', index=False)
+df.to_csv('GAMSampleData_2_masked.csv', index=False)
